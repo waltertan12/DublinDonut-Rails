@@ -1,3 +1,45 @@
 <% provide(:title, "StoryBored") %>
-<h1>Pages#storybored</h1>
-<p>Find me in app/views/pages/storybored.html.erb</p>
+<script>
+    var main = function(){
+    	$('.status-box').keyup(function() {
+    		var postLength = $(this).val().length;
+    		var charactersLeft = 500 - postLength;
+    		$('.storybored-counter').text(charactersLeft);
+    	});
+    }
+
+    $(document).ready(main);
+</script>
+
+
+<div class="jumbotron" id="storybored">
+    <div class="containter">
+        <h1>StoryBored</h1>
+        <p>"There is a time for reciting poetry and a time for fists"</p>
+    </div>
+</div>
+
+<div class="welcome-storybored">
+    <div class="container">
+        <h1>Welcome!</h1>
+        <p>StoryBored is a place to submit anonymous short-stories and poems. Write a sentence, write a few words, it really doesn't matter. Just share and keep it under 500 characters.</p>
+        <p>If you need some inspiration try <a href="http://www.mcsweeneys.net/articles/thirteen-writing-prompts">McSweeney's</a> or <a href="http://www.reddit.com/r/WritingPrompts/">Reddit</a></p>
+    </div>
+</div>
+
+<div class="storybored-post">
+    <div class="container">
+        <h1>Type something</h1>
+        <h3>Or, don't type anything at all</h3>
+        <%= form_for(@poem) do |f| %>
+        <div class="form-group storybored-post-form-group">
+            <%= f.text_area :poem, class: "status-box", placeholder: "Write a short story or poem in under 500 characters..." %>
+        </div>
+        <p class="storybored-counter">500</p><%= f.submit "Submit", class: "btn btn-primary"%>
+        <% end %>
+    </div> 
+</div>
+
+<ul class="storybored-poems">
+    <%= render @poems %>
+</ul>

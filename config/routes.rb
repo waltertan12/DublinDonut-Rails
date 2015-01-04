@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   # resources :pages
+  
     root 'pages#index'
     get 'web_project' => "pages#web_project"
     get 'pugs' => 'pages#pugs'
@@ -9,8 +10,11 @@ Rails.application.routes.draw do
     get 'scroll' => 'pages#scroll'
     get 'dublindonutEP' => 'pages#dublindonutEP'
     get 'generator' => 'pages#generator'
+    get 'slidingmenus' => 'pages#slidingmenus'
     get 'slider' => 'pages#slider'
     get 'overlay' => 'pages#overlay'
+    
+    resources :poems, only: [:create, :new]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

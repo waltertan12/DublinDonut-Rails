@@ -1,0 +1,163 @@
+// Index.html
+.jumbotron-index {
+    background-image: url("http://dublindonut.com/Content/Images/Dublindonut/donuts2.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    height: 500px;
+    text-align: center;
+    h1 {
+        color: white;
+        font-weight: bold;
+    }
+    h3 {
+        color: white;
+        font-style: italic;
+    }
+}
+
+#index {
+    h1 {
+        color: white;
+        font-weight: bold;
+    }
+}
+
+//Web Project Page
+.jumbotron-webproject {
+    background-image: url('http://dublindonut.com/Content/Images/Dublindonut/donuts.jpg');
+    text-align: center;
+    height: 500px;
+    h3 {
+        color: black;
+        font-style: italic;
+    }
+}
+
+#webproject {
+    h1{
+        color: black;
+        font-weight: bold;
+    }
+}
+
+.webproject-info {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    ul {
+        padding: 0px;
+        list-style-type: none;
+    }
+}
+
+// Pug page
+.jumbotron-pugs {
+    
+}
+
+#pugs {
+    background-image: url('http://upload.wikimedia.org/wikipedia/commons/7/7f/Pug_portrait.jpg');
+    height: 600px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: white;
+    h1 {
+        font-weight: bold;
+    }
+    h3 {
+        font-style: italic;
+    }
+}
+
+.pug-family {
+    background-image: url("http://dublindonut.com/Content/Images/Pugs/pug_family.jpg");
+	width: 805px;
+	height: 602px;
+	text-align: center center;
+    h1 {
+        padding: 200px;
+    	text-align: center;
+    	font-weight: bolder;
+    	vertical-align: middle;
+    	font-size: 200px;
+    	color: white;
+    }
+}
+
+.pug-info {
+    padding: 10px;
+	background-color: #d3d3d3;
+	color: white;
+	font-family: Helvetica;
+	padding-bottom: 25px;
+}
+
+.pug-outro {
+    color: gray;
+    a {
+        font-style: italic;
+    }
+}
+
+.pug-footer {
+    height: 50px;
+    background: black;
+    text-align: center;
+    img {
+        display: block;
+    }
+}
+
+// StoryBored
+#storybored {
+    background: url("http://dublindonut.com/Content/Images/Storybored/skyline.jpg");
+	height: 500px;
+	background-size: cover;
+	background-attachment: fixed;
+    color: white;
+    h1 {
+        font-weight: bold;
+    }
+    p {
+        font-style: italic;
+    }
+}
+
+.welcome-storybored {
+    font-family: Helvetica;
+    text-align: center;
+	background: #FCFCFC;
+	padding: 0px;
+	color: gray;
+	h1 {
+	    font-weight: bold;
+	}
+	p {
+	    
+	}
+}
+
+.storybored-post {
+    text-align: center;
+    h3 {
+        font-style: italic;
+    }
+    textarea {
+        height: 100px;
+        width: 70%;
+    }
+    .storybored-counter{
+        color: lightgray;
+    }
+}
+
+.storybored-poems {
+    text-align: center;
+    list-style-type: none;
+    padding: 10px;
+    li {
+        border-top: 1px solid #e8e8e8
+    }
+}

@@ -9,6 +9,9 @@ class PagesController < ApplicationController
   end
 
   def storybored
+    @poem = Poem.new
+    @poems = Poem.all
+    # @feed_items = feed.paginate
   end
 
   def colorbox
@@ -34,4 +37,5 @@ class PagesController < ApplicationController
 
   def overlay
   end
+  
 end

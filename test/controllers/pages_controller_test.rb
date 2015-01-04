@@ -4,16 +4,19 @@ class PagesControllerTest < ActionController::TestCase
   test "should get index" do
     get :index
     assert_response :success
+    assert_select "title", "Dublin Donut"
   end
 
   test "should get pugs" do
     get :pugs
     assert_response :success
+    assert_select "title", "Pugs | Dublin Donut"
   end
 
   test "should get storybored" do
     get :storybored
     assert_response :success
+    assert_select "title", "StoryBored | Dublin Donut"
   end
 
   test "should get colorbox" do
