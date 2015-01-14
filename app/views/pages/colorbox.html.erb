@@ -1,2 +1,426 @@
-<h1>Pages#colorbox</h1>
-<p>Find me in app/views/pages/colorbox.html.erb</p>
+<% provide(:title, "Colorbox") %>
+<script>
+    var main = function(){
+
+	function getRandomColor() {
+	    var letters = '0123456789ABCDEF'.split('');
+	    var color = '#';
+	    	for (var i = 0; i < 6; i++ ) {
+	        	color += letters[Math.floor(Math.random() * 16)];
+	    	}
+	    return color;
+    	};
+    
+    	$('.colorbox-box').on("click", function() {
+    		$(this).css('background-color',getRandomColor());
+    	});
+    
+    	$('.colorbox-box').on("mouseenter", function() {
+    		$(this).css('box-shadow',"#d3d3d3 0 0 10px");
+    	});
+    
+    	$('.colorbox-box').on("mouseleave", function() {
+    		$(this).css('box-shadow',"#d3d3d3 0 0 0px");
+    	});
+    }
+
+    $(document).ready(main);
+</script>
+<body>
+
+	<div class="jumbotron" id="#jumbotron-colorbox">
+		<div class="container">
+			<h1>ColorBox</h1>
+			<p>A place to be creative</p>
+		</div>
+	</div>
+
+	<div class="jumbotron-info">
+		<p>Click anywhere below and see what happens</p>
+	</div>
+
+	<div class="colorbox">
+		<div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+        <div class="colorbox-box"></div>
+	</div>
+
+	<div class="clear"></div>
+
+</body>
+
+
+
+</html>

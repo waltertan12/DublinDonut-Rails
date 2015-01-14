@@ -1,4 +1,9 @@
 // Index.html
+
+body { 
+    padding-top: 70px; 
+}
+
 .jumbotron-index {
     background-image: url("http://dublindonut.com/Content/Images/Dublindonut/donuts2.jpg");
     background-size: cover;
@@ -160,4 +165,38 @@
     li {
         border-top: 1px solid #e8e8e8
     }
+}
+
+#jumbotron-colorbox{
+    background-image: url("http://dublindonut.com/Content/Images/Colorbox/colorbox.jpg");
+	color: white;
+	height: 500px;
+	background-size: cover;
+	h1 {
+	    color: white;
+    	font-size: 100px;
+    	font-weight: bold;
+    }
+    p {
+        font-style: italic;
+        color: white;;
+    }
+	.container {
+	    padding-top: 50px;
+	    padding-left: 100px;
+	}
+}
+
+.colorbox {
+	width: 100%;
+	background-color: #d3d3d3;
+}
+
+.colorbox-box {
+	position: relative;
+	height: 50px;
+	width: 50px;
+	background-color: white;
+	float: left;
+	box-shadow: black 0 0 0em;
 }
