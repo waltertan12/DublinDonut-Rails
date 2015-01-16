@@ -167,6 +167,8 @@ body {
     }
 }
 
+// Colorbox
+
 #jumbotron-colorbox{
     background-image: url("http://dublindonut.com/Content/Images/Colorbox/colorbox.jpg");
 	color: white;
@@ -199,4 +201,22 @@ body {
 	background-color: white;
 	float: left;
 	box-shadow: black 0 0 0em;
+}
+
+// Scroll
+.scroll-top {
+	position: fixed;
+	font-family: helvetica, monospace;
+}
+
+.scroll-bottom {
+	top: 1327px;
+	height: 2000px;
+	font-family: helvetica, monospace;
+	vertical-align: bottom;
+	position: absolute;
+	p {
+    	padding-bottom: 3px;
+    	padding-top: 0px;
+    }
 }

@@ -29,10 +29,10 @@ class PagesControllerTest < ActionController::TestCase
   #   assert_response :success
   # end
 
-  # test "should get scroll" do
-  #   get :scroll
-  #   assert_response :success
-  # end
+  test "should get scroll" do
+    get :scroll
+    assert_response :success
+  end
 
   # test "should get dublindonutEP" do
   #   get :dublindonutEP
