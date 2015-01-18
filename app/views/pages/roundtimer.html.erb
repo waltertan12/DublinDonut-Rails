@@ -1,2 +1,235 @@
-<h1>Pages#roundtimer</h1>
-<p>Find me in app/views/pages/roundtimer.html.erb</p>
+<script>
+    $(document).ready(function() {
+	//run timer if true, stop if false
+	var run = false;
+
+	//initialize time to 0
+	var sec = 0;
+	var min = 0;
+	var hours = 0;
+
+	//initialize work and rest times
+	var rounds = 0;//<--- This is the variable that doesn't act like an int
+	var work = 0;
+	var rest = 0;
+
+	//initialize current round
+	var currentRound = 1;
+
+	//total seconds needed to complete round
+	var totalTime = 0;
+
+	//count seconds elapsed
+	var totalTimeCounter = 0;
+
+	//CLICK EVENT
+	//Start timer, run count function
+	$('.roundtimer-start').on('click', function(){
+	    ok();
+		run = true;
+		count();
+	});
+
+	//CLICK EVENT
+	//Stop timer
+	$('.roundtimer-stop').on('click', function(){
+		run = false;
+	});
+
+	//CLICK EVENT
+	//Reset timer, set seconds back to zero and stop timer
+	$('.roundtimer-reset').on('click', function(){
+		run = false;
+
+		//Reset time
+		sec = 0;
+		min = 0;
+		hours = 0;
+
+        //Reset counters
+    	totalTime = 0;
+	    totalTimeCounter = 0;
+
+
+		//Set time back to 00:00:00
+		$('.roundtimer-timer').text(formatTime(hours) + " : " + formatTime(min) + " : " + formatTime(sec));
+		count();
+
+		//Set currentRound, rounds, work, rest back to original values
+		currentRound = 1;
+		rounds = $("#roundtimer-rounds").val();
+		work = $("#roundtimer-work").val();
+		rest = $("#roundtimer-rest").val();
+
+		//Reset progress text
+		$('.roundtimer-progress-text').text("Progress");
+
+		//Reset progress bar
+		$('.progress-bar').css('width',0+"%");
+		$('.progress-bar').text("0%");	
+
+		//Reset current status
+		$('.roundtimer-current-status').text("Current Status");
+		$('.roundtimer-current-status').css('color',"black");
+	});
+
+	//CLICK EVENT: Set rounds, work, and interval
+	//Round input
+	$('.roundtimer-ok').on('click', function(){
+	    ok();
+	});
+	
+	function ok() {
+	    rounds = $("#roundtimer-rounds").val();
+		work = parseInt($("#roundtimer-work").val());
+		rest = parseInt($("#roundtimer-rest").val());
+
+		//totalTime = (work + rest) / rounds;
+		roundTime = work + rest;
+		totalTime = roundTime * rounds;
+        //$('.test').text(totalTime)
+
+		if((rounds == "") || (work == "") || (rest == "")) {
+			$('.test-2').text("Please fill in all the values");			
+		}
+		if((rounds <= 0) || (work <= 0) || (rest <= 0)){
+			$('.test-2').text("Fill in a positive number for number of rounds / work / rest");
+		}
+		else{
+			$('.roundtimer-progress-text').text("Progress: " + currentRound + " / " + rounds);
+			$('.test-2').text("Rounds: " + rounds + " Work/Rest Interval: " + work + " s / " + rest + " s");
+			//progress();
+		}
+	}
+
+	//Format time to always have two digits e.g. 00:00:05 instead of 0:0:5
+	function formatTime(val){
+		if (val < 10){
+			return "0" + val;
+		}
+		return val;
+	}
+
+	//Count up from zero
+	function count(){
+		/**setTimeout(function, x) runs the function x millliseconds 
+		after being called**/
+		setTimeout(function(){
+
+			//Only run if start is clicked
+			if(run){
+
+				//run timer
+				sec += 1;
+				if (sec == 60){
+					sec = 0;
+					min += 1;
+				}
+				if (min == 60) {
+					min = 0;
+					hours += 1;
+				}
+
+				//UPDATE timer
+				$('.roundtimer-timer').text(formatTime(hours) + " : " + formatTime(min) + " : " + formatTime(sec));
+				
+				//Repeat
+				count();
+				progress();
+			}
+		},1000);
+	}
+
+	//keep track of rounds
+	function progress() {
+
+		//Count down work interval
+		if(work > 0) {
+			work--;
+			$('.roundtimer-current-status').text("Work");
+			$('.roundtimer-current-status').css('color',"green");
+		}
+		//Count down rest interval
+		else if ((work == 0) && (rest > 0)) {
+			rest--;
+			$('.roundtimer-current-status').text("Rest");
+			$('.roundtimer-current-status').css('color',"red");
+			
+			//Go to next round if work == rest == 0 and rest counter
+			if (rest == 0) {
+				work = $("#roundtimer-work").val();
+				rest = $("#roundtimer-rest").val();
+				currentRound++;
+			}
+		}
+
+		//Round timer complete
+		if(currentRound-1 == rounds){
+			run = false;
+			currentRound--;
+			//$('.test').text("Nice job! It's over!");
+			$('.roundtimer-current-status').text("DONE!!! Lu is so proud of you!!!");
+			$('.roundtimer-current-status').css('color',"lightblue");
+		}
+
+		//increment totalTimeCounter for progress bar
+		//Not working
+		totalTimeCounter++;
+		var percent = totalTimeCounter / totalTime * 100;
+		
+		//Progress bar percentage
+		//var percent = 100*currentRound / rounds;
+	
+		//UPDATE round text
+		$('.roundtimer-progress-text').text("Progress: " + currentRound + " / " + rounds);
+
+		//UPDATE progress bar
+		$('.progress-bar').css('width',percent+"%");
+		$('.progress-bar').text(percent + "%");
+
+	}
+});
+</script>
+
+<div class="jumobotron" id="roundtimer">
+    <div class="container">
+        <h1>>2014</h1>
+        <h1>>based Lu timer</h1>
+        <p><a href="http://youtu.be/d8u6MM00_ig?t=1m38s">did he jizz his pants?</a></p>
+    </div>
+</div>
+
+<div class="well" id="roundtimer-well">
+    <p><b>Step 1</b>: Type in positive integers into the rounds, work, and rest boxes. <b>Step 2</b>: Click OK <b>Step 3</b>: Click Start and workout!</p>
+		<p>Some inspiration if you're not sure what to do:</p>
+		<ul>
+			<li><b>Tabata</b> 8 rounds of 20 seconds on 10 seconds off</li>
+			<li><b>Westside Dynamic Effort / EMOM</b> 3 reps of a lift every minute on the minute for 10-15 minutes at 50-60% 1RM. Perform reps as fast as possible.</li>
+		</ul>
+</div>
+
+<div class="roundtimer-timer-container">
+    <div class="roundtimer-input">
+		<input id="roundtimer-rounds" placeholder="Rounds">
+		<input id="roundtimer-work" placeholder="Work Interval (seconds)">
+		<input id="roundtimer-rest" placeholder="Rest Interval (seconds)">
+		<button class="btn roundtimer-ok">OK</button>
+	</div>
+	<div class="roundtimer-status">
+		<p class="roundtimer-current-status">Current Status</p>
+		<p class="roundtimer-progress-text">Progress</p>
+		<div class="progress"><p class="progress-bar">0%</p></div>
+	</div>
+	<div class="roundtimer-function">
+		<p class="roundtimer-timer">00 : 00 : 00</p>
+	</div>
+	<div class="roundtimer-button">
+		<button class="btn roundtimer-start">Start</button>
+		<button class="btn roundtimer-stop">Stop</button>
+		<button class="btn roundtimer-reset">Reset</button>
+	</div>
+	<div>
+		<p class="test"></p>
+		<p class="test-2"></p>
+	</div>
+</div>
