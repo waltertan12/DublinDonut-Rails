@@ -1,0 +1,51 @@
+<% provide(:title, "Pugs") %>
+<script>
+	var images = ["KpStx7i.jpg", "jkA2tR2.jpg", "TR38mI2.jpg", "WzVreJB.jpg", "te5kba0.jpg", "feCcPrG.jpg", "yne9FoZ.jpg", "qpL69a9.jpg", "9rf99A7", "VbTb37Q.jpg", "bEbIx9y.jpg", "0h63ZAQ.jpg", "EYBaL8x.jpg", "XrUhnoV.jpg", "1kA40nH.gif", "EYJHmG7.gif", "TkZb2ok.gif", "fBrG5ZE.gif", "AJqYins.gif", "nqUa0Us.gif", "nh9w76o.gif"];
+
+	var initialBackground = ["dvZVVIA.png","S8PpSIr.png", "E6FYoDG.png", "dw0mSlr.png", "1mq0Dmf.png", "2KpS97D.png", "Mb7Tz9b.png", "6PL0nLi.png", "JMKztxn.png"]
+
+	function getRandomPug(){
+		return  "http://imgur.com/" + images[Math.floor(Math.random()*21)];
+	}
+	function initialize(){
+		for (i = 0; i < 9; i++) {
+			$('#pugwall-' + (i+1)).css('background-image', 'url("http://imgur.com/' + initialBackground[i] + '")');
+		}
+	}
+
+	function main() {
+		initialize();
+
+		$('.pugwall-image').on("click", function(){
+			$(this).css('background-image', 'url(' + getRandomPug() + ')');
+		});
+
+		$('.pugwall-image').on("mouseenter", function() {
+    		$(this).css('box-shadow',"#d3d3d3 0 0 10px");
+    	});
+    
+    	$('.pugwall-image').on("mouseleave", function() {
+    		$(this).css('box-shadow',"#d3d3d3 0 0 0px");
+    	});
+	}
+
+	$(document).ready(main);
+</script>
+
+<div class="pugwall">
+	<div class="pugwall-row">
+		<div class="pugwall-image" id="pugwall-1"></div>
+		<div class="pugwall-image" id="pugwall-2"></div>
+		<div class="pugwall-image" id="pugwall-3"></div>
+	</div>
+	<div class="pugwall-row">
+		<div class="pugwall-image" id="pugwall-4"></div>
+		<div class="pugwall-image" id="pugwall-5"></div>
+		<div class="pugwall-image" id="pugwall-6"></div>
+	</div>
+	<div class="pugwall-row">
+		<div class="pugwall-image" id="pugwall-7"></div>
+		<div class="pugwall-image" id="pugwall-8"></div>
+		<div class="pugwall-image" id="pugwall-9"></div>
+	</div>
+</div>

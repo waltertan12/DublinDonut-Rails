@@ -37,5 +37,8 @@ class PagesController < ApplicationController
 
   def overlay
   end
+
+  def pugwall
+  end
   
 end

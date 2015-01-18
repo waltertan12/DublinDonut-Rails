@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     get 'slidingmenus' => 'pages#slidingmenus'
     get 'slider' => 'pages#slider'
     get 'overlay' => 'pages#overlay'
+    get 'pugwall' => 'pages#pugwall'
     
     resources :poems, only: [:create, :new]
 
