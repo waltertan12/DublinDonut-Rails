@@ -1,5 +1,6 @@
 <li id="poem-<%=poem.id%>">
     <span class="poem">
         <%= poem.poem %>
+        <p class="poem-time"><%= poem.created_at.strftime("%I:%M %p %m/%d/%Y") %></p>
     </span>
 </li>

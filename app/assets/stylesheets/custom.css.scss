@@ -159,15 +159,23 @@ body {
 }
 
 .storybored-poems {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
     list-style-type: none;
     padding: 10px;
     li {
+        padding: 10px;
         border-top: 1px solid #e8e8e8
     }
 }
 
-// Colorbox
+.poem-time {
+    color: lightgray;
+}
+
+// ColorBox
 #jumbotron-colorbox{
     background-image: url("http://dublindonut.com/Content/Images/Colorbox/colorbox.jpg");
 	color: white;
