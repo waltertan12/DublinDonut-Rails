@@ -25,7 +25,7 @@
 	//CLICK EVENT
 	//Start timer, run count function
 	$('.roundtimer-start').on('click', function(){
-	    ok();
+	    initialize();
 		run = true;
 		count();
 	});
@@ -72,14 +72,8 @@
 		$('.roundtimer-current-status').text("Current Status");
 		$('.roundtimer-current-status').css('color',"black");
 	});
-
-	//CLICK EVENT: Set rounds, work, and interval
-	//Round input
-	$('.roundtimer-ok').on('click', function(){
-	    ok();
-	});
 	
-	function ok() {
+	function initialize() {
 	    rounds = $("#roundtimer-rounds").val();
 		work = parseInt($("#roundtimer-work").val());
 		rest = parseInt($("#roundtimer-rest").val());
@@ -90,14 +84,14 @@
         //$('.test').text(totalTime)
 
 		if((rounds == "") || (work == "") || (rest == "")) {
-			$('.test-2').text("Please fill in all the values");			
+			$('.roundtimer-test-2').text("Please fill in all the values");			
 		}
 		if((rounds <= 0) || (work <= 0) || (rest <= 0)){
-			$('.test-2').text("Fill in a positive number for number of rounds / work / rest");
+			$('.roundtimer-test-2').text("Fill in a positive number for number of rounds / work / rest");
 		}
 		else{
 			$('.roundtimer-progress-text').text("Progress: " + currentRound + " / " + rounds);
-			$('.test-2').text("Rounds: " + rounds + " Work/Rest Interval: " + work + " s / " + rest + " s");
+			$('.roundtimer-test-2').text("Rounds: " + rounds + " Work/Rest Interval: " + work + " s / " + rest + " s");
 			//progress();
 		}
 	}
@@ -200,7 +194,7 @@
 </div>
 
 <div class="well" id="roundtimer-well">
-    <p><b>Step 1</b>: Type in positive integers into the rounds, work, and rest boxes. <b>Step 2</b>: Click OK <b>Step 3</b>: Click Start and workout!</p>
+    <p><b>Step 1</b>: Type in positive integers into the rounds, work, and rest boxes. <b>Step 2</b>: Click Start and workout!</p>
 		<p>Some inspiration if you're not sure what to do:</p>
 		<ul>
 			<li><b>Tabata</b> 8 rounds of 20 seconds on 10 seconds off</li>
@@ -213,7 +207,7 @@
 		<input id="roundtimer-rounds" placeholder="Rounds">
 		<input id="roundtimer-work" placeholder="Work Interval (seconds)">
 		<input id="roundtimer-rest" placeholder="Rest Interval (seconds)">
-		<button class="btn roundtimer-ok">OK</button>
+		<!-- <button class="btn roundtimer-ok">OK</button> -->
 	</div>
 	<div class="roundtimer-status">
 		<p class="roundtimer-current-status">Current Status</p>
@@ -229,7 +223,7 @@
 		<button class="btn roundtimer-reset">Reset</button>
 	</div>
 	<div>
-		<p class="test"></p>
-		<p class="test-2"></p>
+		<p class="roundtimer-test"></p>
+		<p class="roundtimer-test-2"></p>
 	</div>
 </div>

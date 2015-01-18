@@ -238,6 +238,7 @@ body {
 	    padding: 100px;
 	}
 	a {
+        text-align: center;
 	    font-style: italic;
 	    color: white;
 	}
@@ -248,6 +249,7 @@ body {
 	    color: white;
 	    font-weight: bold;
 	    font-size: 100px;
+        margin: 0;
 	}
 }
 
@@ -273,6 +275,4 @@ body {
     .roundtimer-function {
         font-size: 50px;
     }
-
-    
 }
