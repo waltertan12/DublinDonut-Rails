@@ -293,6 +293,13 @@ body {
     display: table-cell;
     background-color: lightgray;
     background-size: cover;
-    height: 400px;
-    width: 400px;
+    // height: 400px;
+    // width: 400px;
+    height: 250px;
+    width: 250px;
+}
+
+.pugwall-reset {
+    text-align: center;
+    padding: 10px;
 }

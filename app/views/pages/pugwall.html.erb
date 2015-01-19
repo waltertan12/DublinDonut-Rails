@@ -20,12 +20,21 @@
 					"fBrG5ZE.gif", 
 					"AJqYins.gif", 
 					"nqUa0Us.gif", 
-					"nh9w76o.gif"];
+					"nh9w76o.gif",
+					"d8DT3.gif"];
 
-	var initialBackground = ["dvZVVIA.png","S8PpSIr.png", "E6FYoDG.png", "dw0mSlr.png", "1mq0Dmf.png", "2KpS97D.png", "Mb7Tz9b.png", "6PL0nLi.png", "JMKztxn.png"]
+	var initialBackground = [	"dvZVVIA.png",
+								"S8PpSIr.png", 
+								"E6FYoDG.png", 
+								"dw0mSlr.png", 
+								"1mq0Dmf.png", 
+								"2KpS97D.png", 
+								"Mb7Tz9b.png", 
+								"6PL0nLi.png", 
+								"JMKztxn.png"]
 
 	function getRandomPug(){
-		return  "http://imgur.com/" + images[Math.floor(Math.random()*21)];
+		return  "http://imgur.com/" + images[Math.floor(Math.random()*22)];
 	}
 	function initialize(){
 		for (i = 0; i < 9; i++) {
@@ -47,6 +56,11 @@
     	$('.pugwall-image').on("mouseleave", function() {
     		$(this).css('box-shadow',"#d3d3d3 0 0 0px");
     	});
+    	
+    	$('.pugwall-reset').on('click', function() {
+    		initialize();
+    	});
+    	
 	}
 
 	$(document).ready(main);
@@ -68,4 +82,7 @@
 		<div class="pugwall-image" id="pugwall-8"></div>
 		<div class="pugwall-image" id="pugwall-9"></div>
 	</div>
+</div>
+<div class="pugwall-reset">
+	<button class="btn pugwall-reset">Reset</button>
 </div>
