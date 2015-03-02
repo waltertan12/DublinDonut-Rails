@@ -41,4 +41,7 @@ class PagesController < ApplicationController
   def pugwall
   end
   
+  def sittingdisease
+  end
+  
 end

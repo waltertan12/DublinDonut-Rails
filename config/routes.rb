@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     get 'slider' => 'pages#slider'
     get 'overlay' => 'pages#overlay'
     get 'pugwall' => 'pages#pugwall'
+    get 'sittingdisease' => 'pages#sittingdisease'
     
     resources :poems, only: [:create, :new]
 
