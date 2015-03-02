@@ -1,10 +1,10 @@
 <script>
-var sittingCount = 0;
+var sittingCount = 	0;
 var standingCount = 0;
-var standing = false;
+var standing = 		false;
 var calDifference = 0.0058;
-var calStanding = 0.0275;
-var calSitting = 0.0217;
+var calStanding = 	0.0275;
+var calSitting = 	0.0217;
 
 function stand(){
 	$('#standing').attr('class','btn btn-success');
@@ -25,8 +25,8 @@ function sittingCounter(){
 	setTimeout(function(){
 		if(!standing){
 			sittingCount += 1;
-			$('.coulda').text('You could have burned ' + (sittingCount*calDifference).toFixed(2) + ' more calories standing');
-			$('.current').text("You have been sitting for" + formatTime(sittingCount));
+			$('.coulda').text('You could have burned ' + (sittingCount*calDifference).toFixed(2) + ' more calories standing.');
+			$('.current').text("You have been sitting for" + formatTime(sittingCount)+".");
 			$('.test').css('font-size',(0.01*sittingCount)+'px');
 			$('.test').text("Take a break! Stand up!");
 			sittingCounter();
@@ -38,8 +38,8 @@ function standingCounter(){
 	setTimeout(function(){
 		if(standing){
 			standingCount += 1;
-			$('.current').text("You have been standing for " + formatTime(standingCount));
-			$('.coulda').text('You have burned ' + (standingCount*calStanding).toFixed(2) + " calories");
+			$('.current').text("You have been standing for " + formatTime(standingCount) + ".");
+			$('.coulda').text('You have burned ' + (standingCount*calStanding).toFixed(2) + " calories. That's " + (standingCount*calDifference).toFixed(2) + " more than if you were sitting.");
 			standingCounter();
 		}
 	},1000);
@@ -47,13 +47,13 @@ function standingCounter(){
 function formatTime(time){
 
 	if(time < 60){
-		return " "+ time + " seconds ";
+		return " " + time + " seconds";
 	}
 	else if(time >= 60 && time < 3600 ){
 		return " " + Math.floor(time/60) + " minute(s) and " + (time%60).toFixed(0) +" seconds";
 	}
 	else {
-		return " " + Math.floor(time/3600) + " hour(s) and " + Math.floor((time/3600)%60) + " minute(s) ";
+		return " " + Math.floor(time/3600) + " hour(s) and " + Math.floor((time/3600)%60) + " minute(s)";
 	}
 } 
 
