@@ -1,4 +1,4 @@
-<title>Sitting Disease Tracker</title>
+<% provide(:title, "Overlay") %>
 <script>
 var sittingCount = 	0;
 var standingCount = 0;
@@ -46,17 +46,20 @@ function standingCounter(){
 	},1000);
 }
 function formatTime(time){
+	var hours =   floor(time/3600);
+	var minutes = floor((time/3600)/60);
+	var seconds = ceil(((time%3600)/60)%60);
 
 	if(time < 60){
-		return " " + time + " seconds";
+		return " " + (seconds == 1 ? " second" : " seconds");
 	}
 	else if(time >= 60 && time < 3600 ){
-		return " " + Math.floor(time/60) + " minute(s) and " + (time%60).toFixed(0) +" seconds";
+		return " " + minutes + (minutes == 1 ? " minute" : " minutes") + " and " + seconds + (seconds == 1 ? " second" : " seconds");
 	}
 	else {
-		return " " + Math.floor(time/3600) + " hour(s) and " + Math.floor((time/3600)%60) + " minute(s)";
+		" " + hours + (hours == 1 ? " hour" : " hours") + " and " + minutes + (minutes == 1 ? " minute" : " minutes");
 	}
-} 
+}  
 
 
 function main(){

@@ -59,4 +59,9 @@ class PagesControllerTest < ActionController::TestCase
   #   assert_response :success
   # end
 
+  test "should get sittingdisease" do
+    get :sittingdisease
+    assert_response :success
+  end
+
 end
