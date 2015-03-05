@@ -46,20 +46,21 @@ function standingCounter(){
 	},1000);
 }
 function formatTime(time){
-	var hours =   floor(time/3600);
-	var minutes = floor((time/3600)/60);
-	var seconds = ceil(((time%3600)/60)%60);
+	var hours =   Math.floor(time/3600);
+	var minutes = Math.floor((time/3600)/60);
+	var seconds = Math.ceil(((time%3600)/60)%60);
+
 
 	if(time < 60){
-		return " " + (seconds == 1 ? " second" : " seconds");
+		return " " + seconds + (seconds == 1 ? " second" : " seconds");
 	}
 	else if(time >= 60 && time < 3600 ){
 		return " " + minutes + (minutes == 1 ? " minute" : " minutes") + " and " + seconds + (seconds == 1 ? " second" : " seconds");
 	}
 	else {
-		" " + hours + (hours == 1 ? " hour" : " hours") + " and " + minutes + (minutes == 1 ? " minute" : " minutes");
+		return " " + hours + (hours == 1 ? " hour" : " hours") + " and " + minutes + (minutes == 1 ? " minute" : " minutes");
 	}
-}  
+} 
 
 
 function main(){
