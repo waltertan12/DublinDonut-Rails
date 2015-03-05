@@ -47,8 +47,8 @@ function standingCounter(){
 }
 function formatTime(time){
 	var hours =   Math.floor(time/3600);
-	var minutes = Math.floor((time/3600)/60);
-	var seconds = Math.ceil(((time%3600)/60)%60);
+	var minutes = Math.floor((time%3600)/60);
+	var seconds = Math.ceil(((time%3600)%60)%60);
 
 
 	if(time < 60){
