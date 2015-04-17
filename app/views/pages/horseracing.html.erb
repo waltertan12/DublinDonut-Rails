@@ -1,0 +1,251 @@
+<% provide(:title, "Horse Racing") %>
+<script>
+	// Counter for each horse
+	var h1 = 0;
+	var h2 = 0;
+	var h3 = 0;
+	var h4 = 0;
+
+	// Reset counter
+	var resetCounter = 0;
+
+	//
+	var running = false;
+
+	// Move all horses
+	function progress() {
+
+		// Horse 1
+		if(Math.random() > Math.random() && h1 < 14){
+			moveHorseForward('horse-1');
+			h1++;
+			if (h1 == 14) {
+				$('.results-header').show()
+				$('.placement').append("<li class='horse-1-results'>Horse 1</li>");
+			}
+		}
+
+		// Horse 2
+		if(Math.random() > Math.random() && h2 < 14){
+			moveHorseForward('horse-2');
+			h2++;
+			if (h2 == 14) {
+				$('.results-header').show()
+				$('.placement').append("<li class='horse-2-results'>Horse 2</li>");
+			}
+		}
+
+		// Horse 3
+		if(Math.random() > Math.random() && h3 < 14){
+			moveHorseForward('horse-3');
+			h3++;
+			if (h3 == 14) {
+				$('.results-header').show()
+				$('.placement').append("<li class='horse-3-results'>Horse 3</li>");
+			}
+		}
+
+		// Horse 4
+		if(Math.random() > Math.random() && h4 < 14){
+			moveHorseForward('horse-4');
+			h4++;
+			if (h4 == 14) {
+				$('.results-header').show()
+				$('.placement').append("<li class='horse-4-results'>Horse 4</li>");
+			}
+		}
+
+	}
+	// Move an individual horse forwards
+	function moveHorseForward( horse ) {
+
+		var currentPlacement = $('.'+ horse);
+		var nextPlacement = currentPlacement.next();
+
+		if (nextPlacement.length != 0){
+			currentPlacement.removeClass(horse);
+			currentPlacement.addClass(horse+"-completed");
+			nextPlacement.addClass(horse);
+		}
+
+	}
+
+	// Move an individual horse backwards
+	function moveHorseBackward( horse ) {
+
+		var currentPlacement = $('.'+ horse);
+		var prevPlacement = currentPlacement.prev();
+
+		if (prevPlacement.length != 0){
+			currentPlacement.removeClass(horse);
+			prevPlacement.addClass(horse);
+			prevPlacement.removeClass(horse+"-completed");
+		}
+
+	}
+	// Run game
+	function game() {
+	setTimeout(function(){
+
+		if ((h1 + h2 + h3 + h4) <= 56 && running) {
+			progress();
+			game();
+		}
+		},250);
+
+	}
+
+	// Move all horses back to the starting position
+	function regress() {
+	setTimeout( function() {
+
+		moveHorseBackward("horse-1")
+		moveHorseBackward("horse-2")
+		moveHorseBackward("horse-3")
+		moveHorseBackward("horse-4")
+
+		resetCounter++;
+
+		if (resetCounter < 15) {
+			regress();
+		}
+		},50);
+
+	}
+	// Reset game
+	function resetRace() {
+		// Reset resetCounter
+		resetCounter = 0;
+		regress();
+
+		// Reset all horse counters
+		h1 = h2 = h3 = h4 = 0;
+
+		//Remove results
+		$('.placement').empty();
+		$('.results-header').hide();
+
+		//Stop game from running
+		running = false;
+
+	}
+
+	//Initializing function
+	function main() {
+
+		$('.start-button').on('click', function() {
+			running = true;
+			game()
+		});
+
+		$('.reset-button').on('click', function() {
+			resetRace()
+		});
+
+	}
+	$(document).ready(main);
+</script>
+<html>
+	<div class="jumbotron horseracing">
+		<h1>HORSE RACING!!!</h1>
+		<p>Ultimate excitement and fun</p>
+	</div>
+	<div class="race">
+		<div class="lane">
+		<div class="increment horse-1"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+		</div>
+		<div class="lane lane-2">
+		<div class="increment horse-2"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+		</div>
+		<div class="lane lane-3">
+			<div class="increment horse-3"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+		</div>
+		<div class="lane lane-4">
+			<div class="increment horse-4"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+			<div class="increment"></div>
+		</div>
+		<div class="lane">
+			<div class="increment marker"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment track"></div>
+			<div class="increment marker"></div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="controls">
+			<button class="btn btn-default start-button">Start</button>
+			<button class="btn btn-default reset-button">Reset</button>
+		</div>
+		<div class="results">
+			<h2 class="results-header"><%= link_to "Results", horseracingrules_path, :target => "_blank" %></h2>
+			<ol class="placement">
+			</ol>
+		</div>
+	</div>
+</html>

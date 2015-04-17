@@ -303,3 +303,125 @@ body {
     text-align: center;
     padding: 10px;
 }
+// Horse Racing
+    // Horse Racing - Race
+    .race {
+        text-align: center;
+    }
+    .lane{
+        padding: 10px;
+        text-align: center;
+    }
+    .increment {
+        height: 10px;
+        width: 10px;
+        display: inline-block;
+    }
+    .marker {
+        background-color: black;
+    }
+    .track {
+        background-color: lightgray;
+    }
+
+    // Horse Racing - Horse
+    .horse-1 {
+        background-color: lightblue;
+    }
+    .horse-2{
+        background-color: lightgreen;
+    }
+    .horse-3{
+        background-color: lightpink;
+    }
+    .horse-4{
+        background-color: purple;
+    }
+    .horse-1-completed {
+        background-color: #e4fef7;
+    }
+    .horse-2-completed {
+        background-color: #ecffe2;
+    }
+    .horse-3-completed {
+        background-color: #fff1fa;
+    }
+    .horse-4-completed {
+        background-color: #ccccff;
+    }
+
+    // Horse Racing - Jumbotron
+    .horseracing {
+        background-image: url("http://dublindonut.com/Content/Images/horseracing/horseracing-2.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 500px;
+        background-attachment: fixed;
+        h1 {
+            font-size: 150px;
+        }
+    }
+
+    // Horse Racing - Controls
+    .controls {
+        text-align: center;
+    }
+
+    // Horse Racing - Results / Placement
+    .results {
+        text-align: center;
+        height: 200px;
+    }
+    .placement {
+        font-size: 25px;
+        text-align: center;
+        list-style-position: inside;
+        padding: 0px;
+    }
+    .results-header {
+        display: none;
+    }
+    .horse-1-results {
+        color: lightblue;
+        background-color: #e4fef7;
+    }
+    .horse-2-results {
+        color: lightgreen;
+        background-color: #ecffe2;
+    }
+    .horse-3-results {
+        color: lightpink;
+        background-color: #fff1fa;
+    }
+    .horse-4-results {
+        color: purple;
+        background-color: #ccccff;
+    }
+    .results-header a {
+        color: black;
+        text-decoration: none;
+    }
+    .results-header a:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+// Horse Racing Rules
+// Horse Racing Rules - Jumbotron
+    .jumbotron-horseracingrules {
+        background-image: url("http://dublindonut.com/Content/Images/horseracing/horseracing.jpg");
+        height: 500px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: 10px;
+        background-attachment: fixed;
+    }
+    .jumbotron h1 {
+        font-size: 65px;
+        font-weight: bolder;
+    }
+    // Horse Racing Rules - Rules
+    .rules {
+        text-align: center;
+        padding-bottom: 50px;
+    }

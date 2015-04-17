@@ -15,6 +15,8 @@ Rails.application.routes.draw do
     get 'overlay' => 'pages#overlay'
     get 'pugwall' => 'pages#pugwall'
     get 'sittingdisease' => 'pages#sittingdisease'
+    get 'horseracing' => 'pages#horseracing'
+    get 'horseracingrules' => 'pages#horseracingrules'
     
     resources :poems, only: [:create, :new]
 
